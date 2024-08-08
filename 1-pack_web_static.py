@@ -23,8 +23,7 @@ def do_pack():
 
     # Generate the archive name
     now = datetime.now()
-    archive_name = "versions/web_static_{}.tgz"
-    .format(now.strftime("%Y%m%d%H%M%S"))
+    arch = "versions/web_static_{}.tgz".format(now.strftime("%Y%m%d%H%M%S"))
 
     # Create the archive
     command = "tar -czvf {} web_static".format(archive_name)
@@ -33,4 +32,4 @@ def do_pack():
     # Check if the archive was created successfully
     if result.failed:
         return None
-    return archive_name
+    return arch
